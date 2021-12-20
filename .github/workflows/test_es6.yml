@@ -29,9 +29,9 @@ jobs:
       - name: deploy
         run: |
           ls
-          echo "Installing dependencies..."
-          npm install
           echo "Updating $LAMBDA_NAME..."
           cd $LAMBDA_NAME
+          echo "Installing dependencies..."
+          npm install
           zip -r $LAMBDA_NAME.zip .
           aws lambda update-function-code --function-name=$LAMBDA_NAME --zip-file=fileb://$LAMBDA_NAME.zip
