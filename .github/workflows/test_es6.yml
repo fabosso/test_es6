@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: "14"
           cache: "npm"
+          cache-dependency-path: "$LAMBDA_NAME/package-lock.json"
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
